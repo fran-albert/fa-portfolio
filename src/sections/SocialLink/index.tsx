@@ -11,12 +11,12 @@ function SocialLinks() {
   const links = [
     {
       name: "GitHub",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/fran-albert",
       icon: "https://static-00.iconduck.com/assets.00/github-icon-512x512-52n2sbyc.png",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/francisco-albert-091646195/",
       icon: "https://static-00.iconduck.com/assets.00/linkedin-icon-2048x2048-yexr80uq.png",
     },
   ];
