@@ -37,10 +37,10 @@ function ContactForm() {
       <div className="container px-4 md:px-6 grid gap-8 lg:grid-cols-2 lg:gap-12">
         <div className="space-y-4">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Let's Work Together
+          Let&apos;s Work Together
           </h2>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            I'm always excited to take on new projects and collaborate with passionate individuals and teams. If you have an idea you'd like to discuss, feel free to reach out.
+          I&apos;m always excited to take on new projects and collaborate with passionate individuals and teams. If you have an idea you&apos;d like to discuss, feel free to reach out.
           </p>
         </div>
         <form className="grid gap-4" onSubmit={handleSubmit}>
