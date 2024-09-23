@@ -15,7 +15,7 @@ function FeaturedWorkEnglishVersion() {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid gap-6 py-12 sm:grid-cols-2 lg:grid-cols-2 justify-center">
+        <div className="mx-auto grid gap-6 py-12 sm:grid-cols-3 lg:grid-cols-3 justify-center">
           <div className="group relative overflow-hidden rounded-xl">
             <img
               src="https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/MIRANKINGTENISPORTFOLIO.jpg"
@@ -56,6 +56,29 @@ function FeaturedWorkEnglishVersion() {
               <p className="text-sm text-primary-foreground">
                 Health system for the management of patients, doctors, shifts
                 and more.
+              </p>
+            </div>
+          </div>
+          <div className="group relative overflow-hidden rounded-xl">
+            <img
+              src="/isotipo.png"
+              width="550"
+              height="310"
+              alt="Project 2"
+              className="mx-auto aspect-video w-full object-cover transition-all duration-300 group-hover:scale-105"
+            />
+            <div
+              onClick={() =>
+                window.open("https://i003-cerem-front.vercel.app/inicio")
+              }
+              className="absolute cursor-pointer inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] p-6 transition-all duration-300 group-hover:bg-gradient-to-b"
+            >
+              <h3 className="text-xl font-bold text-primary-foreground">
+                Cerem
+              </h3>
+              <p className="text-sm text-primary-foreground">
+                CRM that centralizes everything on a single platform and uses AI
+                to facilitate management
               </p>
             </div>
           </div>
