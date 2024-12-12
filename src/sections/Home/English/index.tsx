@@ -17,7 +17,7 @@ function EnglishVersion() {
             </h1>
             <h2 className="text-base font-light text-gray-700">
               <ReactTyped
-                strings={["System Analyst"]}
+                strings={["Systems Engineer"]}
                 typeSpeed={50}
                 startDelay={1500}
                 showCursor={false}
@@ -25,9 +25,9 @@ function EnglishVersion() {
             </h2>
           </div>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-justify">
-            I am an advanced student of Information Systems Engineering. My
-            passion for technology and software development has led me to gain
-            experience in various tools and platforms.
+            I am a Systems Engineer. My passion for technology and software
+            development has led me to gain experience in various tools and
+            platforms.
           </p>
         </div>
         <div className="flex items-center justify-center mt-8 lg:mt-0">

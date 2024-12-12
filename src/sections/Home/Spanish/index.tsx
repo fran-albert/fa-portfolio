@@ -17,7 +17,7 @@ function SpanishVersion() {
             </h1>
             <h2 className="text-base font-light text-gray-700">
               <ReactTyped
-                strings={["Analista de Sistemas"]}
+                strings={["Ingeniero de Sistemas"]}
                 typeSpeed={50}
                 startDelay={1500}
                 showCursor={false}
@@ -25,10 +25,9 @@ function SpanishVersion() {
             </h2>
           </div>
           <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-justify">
-            Soy un estudiante avanzado de Ingeniería en Sistemas de Información.
-            Mi pasión por la tecnología y el desarrollo de software me ha
-            llevado a adquirir experiencia en diversas herramientas y
-            plataformas.
+            Soy un Ingeniero de Sistemas. Mi pasión por la tecnología y el
+            desarrollo de software me ha llevado a adquirir experiencia en
+            diversas herramientas y plataformas.
           </p>
         </div>
         <div className="flex items-center justify-center mt-8 lg:mt-0">
