@@ -1,87 +1,165 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { ReactTyped } from "react-typed";
+import { motion } from "framer-motion";
+import { ExternalLink, Code2, Sparkles, ArrowRight } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+
+const projects = [
+  {
+    title: "Mi Ranking Tenis",
+    slug: "mi-ranking-tenis",
+    description: "Plataforma profesional de gestión de torneos de tenis con rankings dinámicos, cuadros de playoffs y estadísticas en tiempo real.",
+    image: "https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/MIRANKINGTENISPORTFOLIO.jpg",
+    url: "https://app.mirankingtenis.com.ar/",
+    tags: ["Next.js 15", "NestJS", "PostgreSQL", "TanStack Query"],
+    gradient: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Albert Semillas",
+    slug: "albert-semillas",
+    description: "Frontend moderno en Next.js para gestión agrícola con sistema de citas, control de acceso y visualización de datos.",
+    image: "https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/MIRANKINGTENISPORTFOLIO.jpg",
+    url: "https://albert-semillas.com",
+    tags: ["Next.js 15", "React 19", "Tailwind CSS 4", "Radix UI"],
+    gradient: "from-green-500 to-emerald-600"
+  },
+  {
+    title: "Incor Centro Médico",
+    slug: "incor-centro-medico",
+    description: "Sistema completo de gestión de salud con historias clínicas electrónicas, portal del paciente e infraestructura AWS.",
+    image: "https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/incor.jpg",
+    url: "https://www.miportal.incorcentromedico.com.ar/",
+    tags: ["React", "NestJS", "MySQL", "AWS"],
+    gradient: "from-blue-600 to-purple-600"
+  },
+  // {
+  //   title: "Himalaya SaaS",
+  //   slug: "himalaya-saas",
+  //   description: "Plataforma de salud multi-tenant con búsqueda geoespacial de médicos potenciada por PostGIS y aplicaciones modernas Next.js 15.",
+  //   image: "/isotipo.png",
+  //   url: "https://himalaya.salud",
+  //   tags: ["Next.js 15", "PostGIS", "Redis", "Microservicios"],
+  //   gradient: "from-purple-600 to-pink-600"
+  // }
+];
 
 function FeaturedWorkSpanishVersion() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section id="portfolio" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+    <section id="portfolio" className="w-full py-20 md:py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 -z-10 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+      </div>
+
       <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-sky-900">
-              <ReactTyped strings={["Mi Portfolio"]} typeSpeed={40} />
-            </h2>
-            <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Visitá algunas de mis aplicaciones web.
-            </p>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">Trabajo Destacado</span>
           </div>
-        </div>
-        <div className="mx-auto grid gap-6 py-12 sm:grid-cols-3 lg:grid-cols-3 justify-center">
-          <div className="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/MIRANKINGTENISPORTFOLIO.jpg"
-              alt="Mi Ranking Tenis"
-              className="w-full transition-all duration-300 group-hover:scale-105"
-            />
-            <div
-              className="absolute cursor-pointer inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] p-6 transition-all duration-300 group-hover:bg-gradient-to-b"
-              onClick={() =>
-                window.open("https://www.app.mirankingtenis.com.ar/")
-              }
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            {inView && <ReactTyped strings={["Mi Portafolio"]} typeSpeed={40} showCursor={false} />}
+          </h2>
+          <p className="max-w-[700px] text-lg text-muted-foreground">
+            Explora algunas de las aplicaciones web innovadoras que he construido con impacto real
+          </p>
+        </motion.div>
+
+        <div className="grid gap-8 md:gap-10 sm:grid-cols-1 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="group relative"
             >
-              <h3 className="text-xl font-bold text-primary-foreground">
-                Mi Ranking Tenis - APP
-              </h3>
-              <p className="text-sm text-primary-foreground">
-                Aplicación web para la gestión de torneos de tenis.
-              </p>
-            </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-xl">
-            <img
-              src="https://mirankingtenis.s3.us-east-1.amazonaws.com/storage/avatar/incor.jpg"
-              width="550"
-              height="310"
-              alt="Project 2"
-              className="mx-auto aspect-video w-full object-cover transition-all duration-300 group-hover:scale-105"
-            />
-            <div
-              onClick={() =>
-                window.open("https://www.miportal.incorcentromedico.com.ar/")
-              }
-              className="absolute cursor-pointer inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] p-6 transition-all duration-300 group-hover:bg-gradient-to-b"
-            >
-              <h3 className="text-xl font-bold text-primary-foreground">
-                Mi Portal - Incor
-              </h3>
-              <p className="text-sm text-primary-foreground">
-                Sistema de salud para la gestión de pacientes, médicos, turnos y
-                estudios.
-              </p>
-            </div>
-          </div>
-          <div className="group relative overflow-hidden rounded-xl">
-            <img
-              src="/isotipo.png"
-              width="550"
-              height="310"
-              alt="Project 2"
-              className="mx-auto aspect-video w-full object-cover transition-all duration-300 group-hover:scale-105"
-            />
-            <div
-              onClick={() =>
-                window.open("https://i003-cerem-front.vercel.app/inicio")
-              }
-              className="absolute cursor-pointer inset-0 flex flex-col items-start justify-end bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0)] p-6 transition-all duration-300 group-hover:bg-gradient-to-b"
-            >
-              <h3 className="text-xl font-bold text-primary-foreground">
-                Cerem
-              </h3>
-              <p className="text-sm text-primary-foreground">
-                CRM que centraliza todo en una sola plataforma y utiliza IA para
-                facilitar la gestión
-              </p>
-            </div>
-          </div>
+              <div className="relative overflow-hidden rounded-2xl bg-card border border-border shadow-lg hover:shadow-2xl transition-all duration-300">
+                {/* Image container */}
+                <div className="relative h-64 overflow-hidden bg-muted">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <motion.a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg"
+                    >
+                      Ver Proyecto
+                      <ExternalLink className="w-4 h-4" />
+                    </motion.a>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6 space-y-4">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-2xl font-bold group-hover:text-gradient transition-all">
+                      {project.title}
+                    </h3>
+                    <Code2 className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Learn More Link */}
+                  <Link href={`/projects/${project.slug}`}>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="w-full flex items-center justify-center gap-2 px-4 py-2 mt-4 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary font-semibold transition-all group/btn"
+                    >
+                      Ver Detalles
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </motion.button>
+                  </Link>
+                </div>
+
+                {/* Gradient border effect */}
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 -z-10`} />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

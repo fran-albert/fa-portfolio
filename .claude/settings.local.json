@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Read(//mnt/c/Users/Francisco/Documents/Works/Albert-Semillas/miagenda-frontend/**)",
+      "Read(//mnt/c/Users/Francisco/Documents/Works/Albert-Semillas/miagenda-frontend/src/**)"
+    ],
+    "additionalDirectories": [
+      "/mnt/c/Users/Francisco/Documents/Works/Albert-Semillas/albert-frontend",
+      "/mnt/c/Users/Francisco/Documents/Works/Rosario Data/Incor Centro Medico/incor-historia-clinica.api",
+      "/mnt/c/Users/Francisco/Documents/Works/Rosario Data/Incor Centro Medico/miportal-incor-laboral/",
+      "/mnt/c/Users/Francisco/Documents/Works/Rosario Data/Incor Centro Medico/miportalincor-front/",
+      "/mnt/c/Users/Francisco/Documents/Works/Himalaya Salud S.A/SaaS/",
+      "/mnt/c/Users/Francisco/Documents/Works/Mi Ranking Tenis/mirankingtenis.API/",
+      "/mnt/c/Users/Francisco/Documents/Works/Mi Ranking Tenis/mirankingtenis.ui/"
+    ]
+  }
+}
