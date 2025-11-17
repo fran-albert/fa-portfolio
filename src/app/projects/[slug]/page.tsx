@@ -10,7 +10,7 @@ import ArchitectureSection from "@/components/projects/ArchitectureSection";
 import FeaturesSection from "@/components/projects/FeaturesSection";
 import ChallengesSection from "@/components/projects/ChallengesSection";
 import RelatedProjects from "@/components/projects/RelatedProjects";
-import { useLanguage } from "./layout";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslatedProject } from "@/lib/project-i18n";
 
 interface ProjectPageProps {

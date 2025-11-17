@@ -1,19 +1,8 @@
 "use client";
 
-import { useState, createContext, useContext } from "react";
+import { useState } from "react";
 import Header from "@/components/ui/header";
-
-interface LanguageContextType {
-  language: string;
-  toggleLanguage: () => void;
-}
-
-const LanguageContext = createContext<LanguageContextType>({
-  language: "en",
-  toggleLanguage: () => {},
-});
-
-export const useLanguage = () => useContext(LanguageContext);
+import { LanguageContext } from "@/contexts/LanguageContext";
 
 export default function ProjectLayout({
   children,
